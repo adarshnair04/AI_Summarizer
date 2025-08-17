@@ -1,0 +1,13 @@
+# Python / Server specific
+server/venv/
+server/__pycache__/
+server/.env
+
+# Node / Client specific
+client/node_modules/
+client/build/
+client/.env
+
+# General IDE and OS files
+.DS_Store
+.vscode/
