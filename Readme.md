@@ -16,7 +16,11 @@ Try it out [here](https://ai-summarizer-nine-brown.vercel.app).
 
 ## Application Preview
 
-![Screenshot of the app](screenshot.png)
+### Input Screen
+![Screenshot of the text upload and summarization input](screenshots/main_page.png)
+
+### Output Screen
+![Screenshot of the generated summary with edit and share options](screenshots/summarized.png)
 
 ## Features
 
