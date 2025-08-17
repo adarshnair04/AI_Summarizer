@@ -66,6 +66,7 @@ except Exception as e:
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
+    "https://ai-summarizer-nine-brown.vercel.app",
     # "https://your-deployed-frontend.vercel.app", # Example
 ]
 
