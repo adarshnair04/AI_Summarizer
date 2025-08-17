@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; // Make sure this is using the CSS with the .share-section styles
 
+// The URL you got from deploying your backend on Render
+const API_BASE_URL = "https://ai-summarizer-xs7x.onrender.com";
+
 function App() {
   const [transcript, setTranscript] = useState("");
   const [prompt, setPrompt] = useState(""); // Default prompt is empty
@@ -73,10 +76,13 @@ function App() {
       "Analyze the following text and create a concise, professional summary. Structure your response with the following sections: First, a section titled 'Key Takeaways' listing the main points and conclusions in bullet points. Second, if any specific tasks, deadlines, or actions are mentioned, create a section titled 'Action Items'. If there are no action items, omit this section.";
 
     try {
-      const response = await axios.post("/api/generate-summary", {
-        transcript,
-        prompt: effectivePrompt,
-      });
+      const response = await axios.post(
+        `${API_BASE_URL}/api/generate-summary`,
+        {
+          transcript,
+          prompt: effectivePrompt,
+        }
+      );
       setSummary(response.data.summary);
       setStatusMessage({ text: "Summary generated successfully.", type: "ok" });
     } catch (error) {
@@ -126,7 +132,7 @@ function App() {
 
     try {
       const recipientList = recipients.split(",").map((email) => email.trim());
-      await axios.post("/api/share-summary", {
+      await axios.post(`${API_BASE_URL}/api/share-summary`, {
         subject: emailSubject.trim() || "Your AI-Generated Meeting Summary",
         summary,
         recipients: recipientList,

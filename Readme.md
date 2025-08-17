@@ -12,13 +12,11 @@ This is a full-stack app that uses AI to create short summaries from meeting tra
 
 ## Live Demo
 
-Try it out [here](https://your-live-demo-url.com). (Replace this with your actual demo link.)
+Try it out [here](https://your-live-demo-url.com).
 
 ## Application Preview
 
 ![Screenshot of the app](screenshot.png)
-
-(Replace `screenshot.png` in the root directory with your own image.)
 
 ## Features
 
@@ -62,11 +60,9 @@ flowchart LR
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ai-summarizer.git
+git clone https://github.com/adarshnair04/ai-summarizer.git
 cd ai-summarizer
 ```
-
-(Replace `your-username` with your GitHub username.)
 
 ### 2. Backend Setup
 
@@ -141,7 +137,7 @@ It will run at http://localhost:3000.
 
 ## Security Notes
 
-- Use a Google App Password for Gmail, not your regular password.
+- Use a Google App Password for Gmail, not your regular gmail password.
 - Keep `.env` files out of version control—add them to `.gitignore`.
 - Use rate limiting in production to handle API usage and costs.
 
