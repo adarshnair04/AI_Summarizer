@@ -42,10 +42,10 @@ Try it out [here](https://your-live-demo-url.com). (Replace this with your actua
 
 ```mermaid
 flowchart LR
-    A[User] -->|Upload Text / File| B[React Frontend]
-    B -->|API Request| C[FastAPI Backend]
-    C -->|Summarization| D[OpenAI API]
-    C -->|Send Email| E[SMTP (Gmail)]
+    A["User"] -->|Upload Text / File| B["React Frontend"]
+    B -->|API Request| C["FastAPI Backend"]
+    C -->|Summarization| D["OpenAI API"]
+    C -->|Send Email| E["SMTP (Gmail)"]
     C -->|Response| B
     B -->|Summary Display / Edit| A
 ```
