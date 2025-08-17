@@ -12,7 +12,7 @@ This is a full-stack app that uses AI to create short summaries from meeting tra
 
 ## Live Demo
 
-Try it out [here](https://your-live-demo-url.com).
+Try it out [here](https://ai-summarizer-nine-brown.vercel.app).
 
 ## Application Preview
 
