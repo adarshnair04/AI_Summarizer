@@ -1,37 +1,46 @@
-📝 AI Meeting Notes Summarizer
+# AI Meeting Notes Summarizer
 
-A full-stack application that leverages AI to generate concise summaries from meeting transcripts and documents. Users can upload or paste text, provide custom instructions, edit the generated summary, and share it via email.
+This is a full-stack app that uses AI to create short summaries from meeting transcripts and documents. You can upload files, paste text, add your own instructions, edit the summary, and email it out.
 
-<p align="center"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/> <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render"/> </p>
-🚀 Live Demo
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render"/>
+</p>
 
-👉 Try it here
+## Live Demo
 
-📸 Application Preview
+Try it out [here](https://your-live-demo-url.com). (Replace this with your actual demo link.)
 
-(Add your own screenshot by replacing screenshot.png in the root directory.)
+## Application Preview
 
-✨ Features
+![Screenshot of the app](screenshot.png)
 
-AI-Powered Summarization – Generate concise, accurate summaries using OpenAI.
+(Replace `screenshot.png` in the root directory with your own image.)
 
-Custom Instructions – Guide the AI’s focus and tone.
+## Features
 
-Multiple Input Options – Paste text or upload .txt files.
+- **AI-Powered Summarization**: Get clear and accurate summaries using OpenAI.
+- **Custom Instructions**: Tell the AI what to focus on or what tone to use.
+- **Multiple Input Options**: Paste text directly or upload .txt files.
+- **Editable Output**: Check and tweak the summary before you share it.
+- **Email Integration**: Send summaries to one or more people easily.
+- **Rate Limiting**: Keeps things under control to avoid overuse and extra costs.
 
-Editable Output – Review and refine summaries before sharing.
+## Tech Stack
 
-Email Integration – Send summaries to multiple recipients seamlessly.
+| Category    | Technology                  |
+|-------------|-----------------------------|
+| Backend     | Python 3.11+, FastAPI, Uvicorn |
+| Frontend    | React.js, Axios, CSS        |
+| AI & Email  | OpenAI API, FastAPI-Mail, SlowAPI |
+| Deployment  | Vercel (Frontend), Render (Backend) |
 
-Rate Limiting – Prevent abuse and manage API costs effectively.
+## Architecture
 
-🛠️ Tech Stack
-Category	Technology
-Backend	Python 3.11+, FastAPI, Uvicorn
-Frontend	React.js, Axios, CSS
-AI & Email	OpenAI API, FastAPI-Mail, SlowAPI
-Deployment	Vercel (Frontend), Render (Backend)
-🏗️ Architecture
+```mermaid
 flowchart LR
     A[User] -->|Upload Text / File| B[React Frontend]
     B -->|API Request| C[FastAPI Backend]
@@ -39,39 +48,56 @@ flowchart LR
     C -->|Send Email| E[SMTP (Gmail)]
     C -->|Response| B
     B -->|Summary Display / Edit| A
+```
 
-⚙️ Local Setup & Installation
-Prerequisites
+## Local Setup & Installation
 
-Node.js v18+
+### Prerequisites
 
-Python v3.11+
+- Node.js v18 or higher
+- Python v3.11 or higher
+- An OpenAI API key
+- A Gmail account with a Google App Password (for email sending)
 
-OpenAI API key
+### 1. Clone the Repository
 
-Gmail account with a Google App Password
-
-1. Clone the Repository
+```bash
 git clone https://github.com/your-username/ai-summarizer.git
 cd ai-summarizer
+```
 
-2. Backend Setup
-# Navigate to server directory
+(Replace `your-username` with your GitHub username.)
+
+### 2. Backend Setup
+
+Navigate to the server directory:
+
+```bash
 cd server
+```
 
-# Create and activate virtual environment
+Create and activate a virtual environment:
+
+```bash
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-# Install dependencies
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-# Create environment file
+Create a `.env` file:
+
+```bash
 touch .env
+```
 
+Add these to your `.env` file:
 
-Add the following in .env:
-
+```
 # OpenAI API Key
 OPENAI_API_KEY="sk-..."
 
@@ -81,36 +107,44 @@ MAIL_PASSWORD="your-16-digit-app-password"
 MAIL_FROM="your-email@gmail.com"
 MAIL_PORT=587
 MAIL_SERVER="smtp.gmail.com"
-
+```
 
 Run the backend:
 
+```bash
 uvicorn main:app --reload
+```
 
+It will run at http://127.0.0.1:8000.
 
-Backend runs at → http://127.0.0.1:8000
+### 3. Frontend Setup
 
-3. Frontend Setup
-# Open a new terminal
+In a new terminal, go to the client directory:
+
+```bash
 cd client
+```
 
-# Install dependencies
+Install dependencies:
+
+```bash
 npm install
+```
 
-# Start React development server
+Start the React server:
+
+```bash
 npm start
+```
 
+It will run at http://localhost:3000.
 
-Frontend runs at → http://localhost:3000
+## Security Notes
 
-🔐 Security Notes
+- Use a Google App Password for Gmail, not your regular password.
+- Keep `.env` files out of version control—add them to `.gitignore`.
+- Use rate limiting in production to handle API usage and costs.
 
-Always use Google App Passwords instead of your main Gmail password.
+## License
 
-Never commit .env files to version control.
-
-Apply rate limiting in production to manage API costs.
-
-📜 License
-
-This project is licensed under the MIT License.
+This project is under the MIT License. See the LICENSE file for details.
